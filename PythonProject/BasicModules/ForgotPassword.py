@@ -2,14 +2,14 @@ from selenium import webdriver
 import time
 
 driver= webdriver.Firefox()
-driver.get("http://kwikhire-dev.s3-website.ap-south-1.amazonaws.com/login")
+driver.get("url/login")
 driver.find_element_by_xpath("//*[@id='app']/div/div/div[2]/form/div[1]/div[3]/a").click()
 time.sleep(3)
 print("click on forgot password")
 url1 = driver.current_url
-if url1 =="http://kwikhire-dev.s3-website.ap-south-1.amazonaws.com/forgot-password":
+if url1 =="url/forgot-password":
     
-    mail=["","sneha","sneha@gmail.com","snehareddy5125@gmail.com"]
+    mail=["","invalidemail","invalidemail","validemail"]
     for i in mail:
         email = driver.find_element_by_id("forgotPasswordEmail")
         email.clear()
@@ -37,10 +37,10 @@ if url1 =="http://kwikhire-dev.s3-website.ap-south-1.amazonaws.com/forgot-passwo
             except:        
                 error =  driver.find_element_by_xpath("/html/body/div/div/div/div[2]/div/p").text
                 
-                #when email is like snehareddy5125@gmail  
+                #when email is  invalid email 
                 if error == "Error occured while sending password reset link":
                     print("Error occured while sending password reset link")  
-                #when email is like snehareddy5125@gmail.com    
+                #when email is valid
                 else:
                     print(error)  
                     print("Success")                                  
