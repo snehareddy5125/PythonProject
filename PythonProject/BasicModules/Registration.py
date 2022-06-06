@@ -2,7 +2,7 @@ from selenium import webdriver
 import time
 driver = webdriver.Firefox()
 driver.maximize_window()
-driver.get("http://kwikhire-dev.s3-website.ap-south-1.amazonaws.com")
+driver.get("url")
 time.sleep(2)
 elem = driver.find_element_by_xpath("//*[@id='app']/div/div/div[1]/div/a[3]")
 elem.click()
@@ -54,7 +54,7 @@ print("\n")
 #password policy              
 elem = driver.find_element_by_id("signupEmail")
 elem.clear()
-elem.send_keys("sneha@gmail.com")
+elem.send_keys("test@gmail.com")
 print("sending email")
 time.sleep(3)
 elem = driver.find_element_by_xpath("//*[@id='app']/div/div/div[2]/div[4]/input")
@@ -78,7 +78,7 @@ if driver.find_element_by_xpath("//*[@id='app']/div/div/div[2]/div[2]"):
 #re enter password mismatch
 elem = driver.find_element_by_id("signupEmail")
 elem.clear()
-elem.send_keys("sneha@gmail.com")
+elem.send_keys("test@gmail.com")
 print("sending email")
 time.sleep(3)
 elem = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[2]/div[5]/input")
