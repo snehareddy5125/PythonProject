@@ -3,7 +3,7 @@ from selenium.webdriver.common.keys import Keys
 import time
 driver = webdriver.Firefox()
 driver.maximize_window()
-driver.get("http://kwikhire-dev.s3-website.ap-south-1.amazonaws.com")
+driver.get("url")
 elem = driver.find_element_by_xpath("//*[@id='app']/div/div/div[1]/div/a[2]")
 elem.click()
 time.sleep(3)
@@ -77,7 +77,7 @@ if driver.find_element_by_xpath("/html/body/div/div/div/div[2]/form/div[1]/p[2]/
 time.sleep(3)
 elem = driver.find_element_by_id("loginEmail")
 elem.clear()
-elem.send_keys("snehareddy5125@gmail.com")
+elem.send_keys("email")
 print("sending email")
 time.sleep(3)
 elem = driver.find_element_by_xpath("/html/body/div/div/div/div[2]/form/div[2]/div[2]/input")
@@ -90,7 +90,7 @@ print("click on login")
 time.sleep(3) 
 url2 = driver.current_url 
 print(url2)
-dashboard = "http://kwikhire-dev.s3-website.ap-south-1.amazonaws.com/dashboard"
+dashboard = "url/dashboard"
 if url2 == dashboard :
     print("Login successfully")
     
