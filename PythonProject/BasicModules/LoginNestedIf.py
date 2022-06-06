@@ -2,12 +2,12 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
 
-user = "sneha@gmail.com"
+user = "stest@gmail.com"
 pwd = "Password123"
 
 driver = webdriver.Firefox()
 driver.maximize_window()
-driver.get("http://kwikhire-dev.s3-website.ap-south-1.amazonaws.com")
+driver.get("url")
 #login
 elem = driver.find_element_by_xpath("//*[@id='app']/div/div/div[1]/div/a[2]")
 elem.click()
@@ -25,7 +25,7 @@ print("login")
 time.sleep(3)
 url = driver.current_url 
 print(url)
-currenturl="http://kwikhire-dev.s3-website.ap-south-1.amazonaws.com/login"
+currenturl="url/login"
 
 if currenturl==url:
     #email   
